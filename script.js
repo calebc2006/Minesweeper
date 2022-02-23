@@ -30,6 +30,11 @@ function gameLoop() {
   }, 100)
 }
 
+window.addEventListener("load", (event) => {
+  gameLoop()
+  
+})
+
 resetBtn.addEventListener("click", () => {
   gameLoop()
   GAMEOVER = false

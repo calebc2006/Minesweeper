@@ -13,9 +13,50 @@ body {
   background-color: aliceblue;
   margin: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: "Courier New", Courier, monospace;
+}
+
+.back-btn {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  font-size: 1.8rem;
+  padding: 20px 30px;
+  cursor: pointer;
+}
+
+.fa-arrow-left {
+  font-size: 2.5rem;
+  color: black;
+}
+
+.start-btn {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.start-link {
+  font-size: 2rem;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+.start-link:hover {
+  background-color: #bbb;
 }
 
 .big-container {
@@ -34,6 +75,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.index-container {
+  padding: 0;
 }
 
 h1 {
@@ -84,7 +129,8 @@ h1 {
   background-color: #ddd;
 }
 
-.fa-solid {
+.fa-flag,
+.fa-bomb {
   color: red;
 }
 
