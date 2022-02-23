@@ -1,4 +1,4 @@
-export const BOARD_COLUMNS = 9
+export const BOARD_COLUMNS = 16
 export const BOARD_ROWS = 9
 export const NUM_BOMBS = Math.floor((BOARD_COLUMNS * BOARD_ROWS) / 5)
 

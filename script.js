@@ -13,8 +13,7 @@ const timerElem = document.getElementById("timer")
 let GAMEOVER = false
 let USER_WIN = false
 let START_TIME = 0
-let curBoard = generateRandomBoard()[0]
-let bombCoords = generateRandomBoard()[1]
+let curBoard, bombCoords
 
 function gameLoop() {
   fillBoard()
@@ -37,6 +36,8 @@ resetBtn.addEventListener("click", () => {
 })
 
 function fillBoard() {
+  ;[curBoard, bombCoords] = generateRandomBoard()
+
   gameBoardElem.innerHTML = ""
   for (let row = 0; row < BOARD_ROWS; row++) {
     for (let col = 0; col < BOARD_COLUMNS; col++) {
@@ -138,7 +139,7 @@ function onRightClick(e) {
 function endGame() {
   gameBoardElem.removeEventListener("click", onClick)
   if (!USER_WIN) header.innerHTML = "GAME OVER!"
-  else header.innerHTML = "PUZZLE COMPLETED! (refresh for new puzzle)"
+  else header.innerHTML = "PUZZLE COMPLETED!"
   resetBtn.innerHTML = "TRY AGAIN"
   showAnswer()
 }
