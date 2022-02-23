@@ -36,6 +36,8 @@ resetBtn.addEventListener("click", () => {
 })
 
 function fillBoard() {
+  document.documentElement.style.setProperty("--num-columns", BOARD_COLUMNS)
+  document.documentElement.style.setProperty("--num-rows", BOARD_ROWS)
   ;[curBoard, bombCoords] = generateRandomBoard()
 
   gameBoardElem.innerHTML = ""
