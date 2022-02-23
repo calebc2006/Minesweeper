@@ -5,14 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="indexScript.js" type="module" defer></script>
     <title>Minesweeper Menu</title>
   </head>
   <body>
     <div class="big-container">
+      <h1 class="index-h1">Welcome to Minesweeper!</h1>
       <div class="container index-container">
-        <form action="game.html" class="start-btn">
-          <button class="start-link">Start Game</button>
-        </form>
+        <h2>Pick the board size:</h2>
+        <div class="start-form">
+          <button class="start-link" id="1">Small</button>
+          <button class="start-link" id="2">Medium</button>
+          <button class="start-link" id="3">Large</button>
+          <button class="start-link" id="4">Extra Large</button>
+        </div>
       </div>
     </div>
   </body>

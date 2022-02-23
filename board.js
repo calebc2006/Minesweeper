@@ -1,6 +1,26 @@
-export const BOARD_COLUMNS = 16
-export const BOARD_ROWS = 9
-export const NUM_BOMBS = Math.floor((BOARD_COLUMNS * BOARD_ROWS) / 5)
+const SIZES = [
+  [9, 9, 18],
+  [16, 9, 30],
+  [24, 16, 78],
+  [32, 22, 130],
+]
+
+export let BOARD_COLUMNS = 16
+export let BOARD_ROWS = 9
+export let NUM_BOMBS = 9
+
+window.onload = function () {
+  let url = document.location.href,
+    params = url.split("?")[1].split("&"),
+    data = {},
+    tmp
+  for (var i = 0, l = params.length; i < l; i++) {
+    tmp = params[i].split("=")
+    data[tmp[0]] = tmp[1]
+  }
+
+  ;[BOARD_COLUMNS, BOARD_ROWS, NUM_BOMBS] = SIZES[parseInt(data.size) - 1]
+}
 
 const dir = [
   [0, 1],

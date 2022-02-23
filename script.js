@@ -32,7 +32,6 @@ function gameLoop() {
 
 window.addEventListener("load", (event) => {
   gameLoop()
-  
 })
 
 resetBtn.addEventListener("click", () => {
