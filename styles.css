@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --num-columns: 9;
+  --num-rows: 9;
+}
+
+body {
+  background-color: aliceblue;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.container {
+  margin-top: 100px;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  background-color: #ccc;
+  border: double;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.game-board {
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(var(--num-columns), 2.5rem);
+  grid-template-rows: repeat(var(--num-rows), 2.5rem);
+}
+
+.bottom-section {
+  height: 80px;
+}
+
+.board-tile {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(50, 60, 100);
+}
+
+.hide {
+  display: none;
+}
+
+.bottom-section {
+  display: flex;
+  width: 80%;
+  padding: 0px 60px;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.reset-btn {
+  border: solid 3px #aaa;
+  height: 60px;
+  padding: 0px 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+}
+.reset-btn:hover {
+  background-color: #ddd;
+}
+
+.fa-solid {
+  color: red;
+}
+
+.unselected {
+  background-color: #ccc;
+  border: solid 1px #666;
+  cursor: pointer;
+}
+.unselected:hover {
+  background-color: #bbb;
+}
