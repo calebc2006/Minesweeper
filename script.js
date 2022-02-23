@@ -27,7 +27,7 @@ function gameLoop() {
       endGame()
       return
     } else timerElem.innerHTML = formatTime(Date.now() - START_TIME)
-  }, 50)
+  }, 100)
 }
 
 resetBtn.addEventListener("click", () => {

@@ -18,8 +18,13 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
+.big-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 .container {
-  margin-top: 100px;
   width: fit-content;
   height: fit-content;
   padding: 20px;
