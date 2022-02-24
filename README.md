@@ -3,4 +3,4 @@
 This is a simple JS minesweeper game.
 Change the size of the board in the file 'board.js'
 
-Todo: Use LocalStorage to store best user times
+Todo: Optimise css for smaller screens
