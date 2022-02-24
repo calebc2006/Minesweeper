@@ -167,6 +167,7 @@ function endGame() {
           )
         ) {
           addTime(LEVEL, curTime)
+          showUserData()
         } else {
           return
         }
@@ -175,7 +176,6 @@ function endGame() {
       { once: true }
     )
   }
-  showUserData()
 }
 
 function numFlagsAround(row, col) {
