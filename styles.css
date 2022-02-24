@@ -17,6 +17,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "Courier New", Courier, monospace;
+  color: black;
 }
 
 .back-btn {
@@ -26,10 +27,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 200px;
+  width: 150px;
   font-size: 1.8rem;
-  padding: 20px 30px;
   cursor: pointer;
+  background-color: inherit;
+  border: none;
+  color: black;
+  text-align: center;
+  transform: scale(0.8);
+}
+.back-btn:hover {
+  transform: scale(0.9);
+}
+
+.back {
+  text-align: center;
 }
 
 .fa-arrow-left {
@@ -54,6 +66,10 @@ body {
   height: 25%;
   width: 100%;
   border: solid black 1px;
+  color: black;
+}
+.start-link:hover {
+  font-weight: bold;
 }
 
 h2 {
@@ -115,7 +131,9 @@ h1 {
 .board-tile {
   font-size: 1rem;
   font-weight: bold;
-  color: rgb(50, 60, 100);
+  color: black;
+  border: solid 1px #666;
+  background-color: #ddd;
 }
 
 .hide {
@@ -132,16 +150,18 @@ h1 {
 }
 
 .reset-btn {
-  border: solid 3px #aaa;
+  border: solid 3px #999;
   height: 60px;
   padding: 0px 20px;
   font-size: 1.4rem;
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;
   cursor: pointer;
+  background-color: #aaa;
+  color: black;
 }
 .reset-btn:hover {
-  background-color: #ddd;
+  background-color: #bbb;
 }
 
 .fa-flag,
@@ -151,7 +171,7 @@ h1 {
 
 .unselected {
   background-color: #ccc;
-  border: solid 1px #666;
+
   cursor: pointer;
 }
 .unselected:hover {
