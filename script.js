@@ -4,18 +4,24 @@ import {
   BOARD_COLUMNS,
   BOARD_ROWS,
   generateBlankBoard,
+  LEVEL,
 } from "./board.js"
+
+import { addTime } from "./store.js"
 
 const gameBoardElem = document.getElementById("game-board")
 const resetBtn = document.getElementById("reset-btn")
 const header = document.getElementById("game-over")
 const timerElem = document.getElementById("timer")
 let GAMEOVER = false
+let PROCESSED_ENDGAME = false
 let USER_WIN = false
 let START_TIME = 0
 let curBoard, bombCoords
 
 function gameLoop() {
+  PROCESSED_ENDGAME = false
+  USER_WIN = false
   fillBoard()
   showStartTiles()
   startGame()
@@ -24,8 +30,9 @@ function gameLoop() {
   setInterval(() => {
     checkWin()
     if (GAMEOVER) {
+      if (PROCESSED_ENDGAME) return
       endGame()
-      return
+      PROCESSED_ENDGAME = true
     } else timerElem.innerHTML = formatTime(Date.now() - START_TIME)
   }, 100)
 }
@@ -144,10 +151,29 @@ function onRightClick(e) {
 
 function endGame() {
   gameBoardElem.removeEventListener("click", onClick)
-  if (!USER_WIN) header.innerHTML = "GAME OVER!"
-  else header.innerHTML = "PUZZLE COMPLETED!"
-  resetBtn.innerHTML = "TRY AGAIN"
+  resetBtn.innerHTML = "PLAY AGAIN"
   showAnswer()
+
+  if (!USER_WIN) header.innerHTML = "GAME OVER!"
+  else {
+    header.innerHTML = "PUZZLE COMPLETED!"
+    let curTime = Date.now() - START_TIME
+    setTimeout(
+      () => {
+        if (
+          confirm(
+            `Would you like to store your time of ${formatTime(curTime)}?`
+          )
+        ) {
+          addTime(LEVEL, curTime)
+        } else {
+          return
+        }
+      },
+      500,
+      { once: true }
+    )
+  }
 }
 
 function numFlagsAround(row, col) {

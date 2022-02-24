@@ -7,7 +7,8 @@ const SIZES = [
 
 export let BOARD_COLUMNS = 16
 export let BOARD_ROWS = 9
-export let NUM_BOMBS = 9
+export let NUM_BOMBS = 26
+export let LEVEL = 2
 
 window.onload = function () {
   let url = document.location.href,
@@ -20,6 +21,7 @@ window.onload = function () {
   }
 
   ;[BOARD_COLUMNS, BOARD_ROWS, NUM_BOMBS] = SIZES[parseInt(data.size) - 1]
+  LEVEL = parseInt(data.size)
 }
 
 const dir = [
