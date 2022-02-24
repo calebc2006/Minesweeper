@@ -22,6 +22,7 @@ let curBoard, bombCoords
 function gameLoop() {
   PROCESSED_ENDGAME = false
   USER_WIN = false
+  showUserData()
   fillBoard()
   showStartTiles()
   startGame()
@@ -174,6 +175,7 @@ function endGame() {
       { once: true }
     )
   }
+  showUserData()
 }
 
 function numFlagsAround(row, col) {
@@ -316,4 +318,28 @@ function checkWin() {
   }
   GAMEOVER = true
   USER_WIN = true
+}
+
+function showUserData() {
+  const best = document.getElementById("best")
+  const average = document.getElementById("average")
+  const plays = document.getElementById("plays")
+  const first = document.getElementById("first")
+  const second = document.getElementById("second")
+  const third = document.getElementById("third")
+  const fourth = document.getElementById("fourth")
+  const fifth = document.getElementById("fifth")
+
+  let curData = localStorage.getItem(`size${LEVEL}Data`)
+  if (curData === null) return
+
+  curData = JSON.parse(curData)
+  best.innerHTML = `Best: ${formatTime(curData.bestTime)}`
+  average.innerHTML = `Average: ${formatTime(curData.average)}`
+  plays.innerHTML = `# Solves: ${curData.numPlays}`
+  first.innerHTML = formatTime(curData.last5[0])
+  second.innerHTML = formatTime(curData.last5[1])
+  third.innerHTML = formatTime(curData.last5[2])
+  fourth.innerHTML = formatTime(curData.last5[3])
+  fifth.innerHTML = formatTime(curData.last5[4])
 }
