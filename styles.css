@@ -35,6 +35,7 @@ body {
   color: black;
   text-align: center;
   transform: scale(0.8);
+  user-select: none;
 }
 .back-btn:hover {
   transform: scale(0.9);
@@ -104,6 +105,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  user-select: none;
 }
 
 .index-container {
