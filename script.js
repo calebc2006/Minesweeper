@@ -334,9 +334,9 @@ function showUserData() {
   if (curData === null) return
 
   curData = JSON.parse(curData)
-  best.innerHTML = `Best: ${formatTime(curData.bestTime)}`
-  average.innerHTML = `Average: ${formatTime(curData.average)}`
-  plays.innerHTML = `# Solves: ${curData.numPlays}`
+  best.innerHTML = `Best Time: ${formatTime(curData.bestTime)}`
+  average.innerHTML = `Average Time: ${formatTime(curData.average)}`
+  plays.innerHTML = `Number of Solves: ${curData.numPlays}`
   first.innerHTML = formatTime(curData.last5[0])
   second.innerHTML = formatTime(curData.last5[1])
   third.innerHTML = formatTime(curData.last5[2])
