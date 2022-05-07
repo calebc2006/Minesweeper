@@ -4,8 +4,7 @@ const button3 = document.getElementById("3")
 const button4 = document.getElementById("4")
 
 function handleClick(id) {
-  let url = "http://" + document.URL.split("/")[2] + "/game.html?size=" + id
-  document.location.href = url
+  document.location.href = "game.html"
 }
 
 button1.addEventListener("click", () => {
