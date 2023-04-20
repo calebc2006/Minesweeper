@@ -4,7 +4,7 @@ const button3 = document.getElementById("3")
 const button4 = document.getElementById("4")
 
 function handleClick(id) {
-  document.location.href = "game.html"
+  document.location.href = `game.html?size=${id}`
 }
 
 button1.addEventListener("click", () => {
